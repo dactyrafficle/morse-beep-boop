@@ -1,6 +1,7 @@
 
 
 let container = document.getElementById('container');
+let morse_sequence = document.getElementById('morse-sequence');
 
 // I use a lib for Morse encoding, didn't tested it too much though
 // https://github.com/Syncthetic/MorseCode/
@@ -13,32 +14,71 @@ const ctx = new (window.AudioContext || window.webkitAudioContext)(); // so this
 (async function initMorseData() {  //'<-- is async just him being explicit? [nope: he used async + await] wtf is that?
   // our AudioBuffers objects
   const [short, long] = await fetchBuffers();
-
-  // btn.onclick = e => {
-  btn.addEventListener('click', function(e) {
+  
+  
+  // mybutton.onclick = e => {
+  document.getElementById('mybutton-chars').addEventListener('click', function(e) {
     let time = 0; // a simple time counter
-		var text = inp.value;
-    const sequence = morse.encode(text);
-		console.log(text);
+		var input_text = myinput.value;
+    const sequence = morse.encode(input_text);
+		console.log(input_text);
 		
 		container.innerHTML = '';
-		//let table = document.createElement('table');
-    //table.classList.add('mytables');
-    //container.appendChild(table);
-    for (let i = 0; i < text.length; i++) {
+    morse_sequence.innerHTML = '';
+
+
+    for (let i = 0; i < input_text.length; i++) {
+      
+      morse_sequence.innerHTML += morse.encode(input_text[i]) + ' ';
       
 			let tr = document.createElement('tr');
       container.appendChild(tr);
       
       (function() {
         let td = document.createElement('td');
-        td.innerHTML = text[i];
+        td.classList.add('input-chars');
+        td.innerHTML = input_text[i];
         tr.appendChild(td);
 			})();
       
       (function() {
         let td = document.createElement('td');
-        td.innerHTML = morse.encode(text[i]);
+        td.classList.add('morse-chars');
+        td.innerHTML = morse.encode(input_text[i]);
+        tr.appendChild(td);
+			})();
+
+		}
+  });
+  
+  
+  
+
+  // mybutton.onclick = e => {
+  document.getElementById('mybutton-audio').addEventListener('click', function(e) {
+    let time = 0; // a simple time counter
+		var input_text = myinput.value;
+    const sequence = morse.encode(input_text);
+		console.log(input_text);
+		
+		container.innerHTML = '';
+
+    for (let i = 0; i < input_text.length; i++) {
+      
+			let tr = document.createElement('tr');
+      container.appendChild(tr);
+      
+      (function() {
+        let td = document.createElement('td');
+        td.classList.add('input-chars');
+        td.innerHTML = input_text[i];
+        tr.appendChild(td);
+			})();
+      
+      (function() {
+        let td = document.createElement('td');
+        td.classList.add('morse-chars');
+        td.innerHTML = morse.encode(input_text[i]);
         tr.appendChild(td);
 			})();
 
@@ -65,8 +105,11 @@ const ctx = new (window.AudioContext || window.webkitAudioContext)(); // so this
       time += source.buffer.duration;
     });
   });
+  
   // ready to go
-  btn.disabled = false
+  document.getElementById('mybutton-chars').disabled = false
+  document.getElementById('mybutton-audio').disabled = false
+  
 })()
   .catch(console.error);
 

@@ -18,20 +18,29 @@ html, body {
   padding: 1vh;
 }
 
-#inp {
+#myinput {
+  padding: 1vh;
   height: 50px;
   width: 200px;
 }
 
-#btn {
+.mybuttons {
   background-color: #c2d1f0;
   outline: none;
   border: 3px solid #5c85d6;
-  border-radius: 5%;
+  border-radius: 4%;
   height: 50px;
   width: 100px;
 }
-#btn:hover {
+.mybuttons:hover {
   background-color: #adc2eb;
   border: 3px solid #2e5cb8;
+  font-weight: bold;
+}
+
+.input-chars {
+  
+}
+.morse-chars {
+  font-size: 30px;
 }
