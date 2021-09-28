@@ -3,15 +3,25 @@
  <meta charset="utf-8">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <link rel="icon" href="index.png">
+ <title> morse! </title>
+ <link rel="stylesheet" type="text/css" href="index.css">
  <script src="https://cdn.jsdelivr.net/gh/Syncthetic/MorseCode@master/morsecode.js"></script>
 </head>
 
 
 
-<input type="text" id="inp" value="sos"><button id="btn" disabled>play</button>
-
-<div id='container' class='container'></div>
-
+<div id='main'>
+ <h4> mr morse and his wonderful beeps </h4>
+ <h5> the boops have also endeavored to participate </h5>
+ <table class='mytables'>
+  <thead>
+   <tr><td><input type="text" id="inp" value="sos"></td><td><button id="btn" disabled>play!</button></td></tr>
+  </thead>
+  <tbody id='container'>
+  </tbody>
+ </table>  
+ <!-- div id='container' class='container'></div -->
+</div>
 
 <script src='setup.js'></script>
 </html>

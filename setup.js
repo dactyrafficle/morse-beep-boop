@@ -22,10 +22,26 @@ const ctx = new (window.AudioContext || window.webkitAudioContext)(); // so this
 		console.log(text);
 		
 		container.innerHTML = '';
-		for (var i = 0; i < text.length; i++) {
-			var p = document.createElement('p');
-			p.textContent = text[i] + ': ' + morse.encode(text[i]);
-			container.appendChild(p);
+		//let table = document.createElement('table');
+    //table.classList.add('mytables');
+    //container.appendChild(table);
+    for (let i = 0; i < text.length; i++) {
+      
+			let tr = document.createElement('tr');
+      container.appendChild(tr);
+      
+      (function() {
+        let td = document.createElement('td');
+        td.innerHTML = text[i];
+        tr.appendChild(td);
+			})();
+      
+      (function() {
+        let td = document.createElement('td');
+        td.innerHTML = morse.encode(text[i]);
+        tr.appendChild(td);
+			})();
+
 		}
 		
 		

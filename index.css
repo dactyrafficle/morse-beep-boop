@@ -1,0 +1,37 @@
+
+html, body {
+ font-family: monospace;  
+}
+
+#main {
+  border: 1px solid #ddd;
+  margin: 1vh;
+  padding: 1vh;
+  min-height: 98vh; 
+}
+
+.mytables {
+  border-collapse: collapse;
+}
+.mytables td {
+  border: 1px solid #ddd;
+  padding: 1vh;
+}
+
+#inp {
+  height: 50px;
+  width: 200px;
+}
+
+#btn {
+  background-color: #c2d1f0;
+  outline: none;
+  border: 3px solid #5c85d6;
+  border-radius: 5%;
+  height: 50px;
+  width: 100px;
+}
+#btn:hover {
+  background-color: #adc2eb;
+  border: 3px solid #2e5cb8;
+}
