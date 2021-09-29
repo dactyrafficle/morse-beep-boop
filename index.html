@@ -9,14 +9,17 @@
 </head>
 
 <!-- write out chars and copy for text -->
+<body>
+<div>
 
-<div id='main'>
- <h4> mr morse and his wonderful beeps </h4>
- <h5> the boops have also endeavored to participate </h5>
  <table class='mytables'>
+ 
   <thead>
    <tr>
-    <td colspan='99'><input type="text" id="myinput" value="sos"></td>
+    <td colspan='99'><br><div id='title'>morse code : beeps and boops! </div><br></td>
+   </tr>
+   <tr>
+    <td colspan='99'><input type="text" id="myinput" value="" placeholder='enter text'></td>
    </tr>
     <td><button id="mybutton-chars" class='mybuttons' >chars!</button></td>
     <td><button id="mybutton-audio" class='mybuttons' >audio!</button></td>
@@ -27,9 +30,13 @@
   </thead>
   <tbody id='container'>
   </tbody>
- </table>  
- <!-- div id='container' class='container'></div -->
+ </table>
+
 </div>
+</body>
+ 
+ <!-- div id='container' class='container'></div -->
+
 
 <script src='setup.js'></script>
 </html>

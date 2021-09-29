@@ -1,27 +1,43 @@
 
 html, body {
- font-family: monospace;  
-}
-
-#main {
-  border: 1px solid #ddd;
-  margin: 1vh;
-  padding: 1vh;
-  min-height: 98vh; 
+ font-family: calibri;
+ padding: 0; 
 }
 
 .mytables {
-  border-collapse: collapse;
+ border-collapse: collapse;
+ width: 100%;
 }
 .mytables td {
-  border: 1px solid #ddd;
-  padding: 1vh;
+ border: 1px solid #ddd;
+ padding: 1vh;
+ margin: 0;
 }
+tr td {
+ vertical-align: center;
+}
+/*
+.mytables thead:first-child tr:nth-child(3) td:first-child {
+ width: 50%;
+ background-color: red;
+ text-align: center;
+}
+*/
+.mytables thead:first-child tr:nth-child(3) {
+ width: 50%;
+ text-align: center;
+}
+
+#title {
+ font-size: 18px;
+ text-align: center;
+ font-weight: bold;
+ }
 
 #myinput {
   padding: 1vh;
   height: 50px;
-  width: 200px;
+  width: 100%;
 }
 
 .mybuttons {
@@ -31,6 +47,7 @@ html, body {
   border-radius: 4%;
   height: 50px;
   width: 100px;
+  margin: auto 0;
 }
 .mybuttons:hover {
   background-color: #adc2eb;
@@ -43,4 +60,5 @@ html, body {
 }
 .morse-chars {
   font-size: 30px;
+  font-family: monospace;
 }
